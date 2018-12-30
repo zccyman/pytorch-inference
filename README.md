@@ -4,12 +4,12 @@
 
 - Prepare Data
 
-	data/train
+	data/train/
 	
 		- 0
 		- 1
 		
-	data/test
+	data/test/
 	
 		- 0
 		- 1
@@ -18,13 +18,16 @@
 
 	cd examples && python train.py
 	
+	
 - Transform Model
 
 	cd examples && python transform_model.py
+	
 
 - Test Model
 
 	use makefile/pytorch/pytorch.sln
+	
 
 - Thirdparty
 
