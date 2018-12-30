@@ -39,9 +39,11 @@
 	thirdpart/
 	
 		- libtorch  
+
 		https://download.pytorch.org/libtorch/cu100/libtorch-win-shared-with-deps-latest.zip
 
 		- opencv 
+
 		https://opencv.org/releases.html
 
 ### Environment
