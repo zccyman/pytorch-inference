@@ -236,14 +236,17 @@ def demo():
     args = parser.parse_args()
 
     #log
-    log_file = ".\\checkpoint\\log.txt"
+    log_file = "./checkpoint/log.txt"
     if os.path.exists(log_file):
         os.remove(log_file)
-    args.logger = setup_logger("", ".\\checkpoint\\", 0)
+    if not os.path.exists("./checkpoint/"):
+        os.makedirs("./checkpoint/")
+    args.logger = setup_logger("", "./checkpoint/", 0)
 
+    data_root = "/disk2/zhangcc/facevisa/POY/poy_chaos_tail_detection/data/tail_cascade"
     #data_root = "H:\\POY\\poylongjumptopside\\origin\\train\\longjump_cascade_assem"
-    data_root = ".\\data"
-    args.resume_file = ".\\checkpoint\\resume_training_model.pkl"
+    #data_root = "./data"
+    args.resume_file = "./checkpoint/resume_training_model.pkl"
 
     args.channels = 3
     args.height = 224
@@ -261,7 +264,7 @@ def demo():
     momentum = 0.9
     weight_decay = 1e-4
 
-    resume = 1
+    resume = 0
     pretrained = 0
     args.is_multi_gpu = 0
     device_ids = [0]
@@ -318,7 +321,7 @@ def demo():
             nn.Linear(128, labels),
         )
     print(model)
-    net_vision(model)
+    #net_vision(model)
 
     args.logger.info("gpu_id num: {}".format(torch.cuda.device_count()))
     if torch.cuda.device_count() > 0 and args.is_multi_gpu:
