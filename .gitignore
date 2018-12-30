@@ -1,0 +1,11 @@
+makefile/*.vs
+makefile/python.dir
+makefile/Release
+thirdparty/libtorch
+thirdparty/opencv
+examples/data
+examples/Digraph.gv*
+examples/models/__pycache__
+examples/tools/__pycache__
+examples/checkpoint
+
