@@ -4,7 +4,7 @@
 
 - Prepare Data
 
-	data/train/
+	examples/data/train/
 	
 		- 0
 		- 1
@@ -13,7 +13,7 @@
 		  .
 		- n
 		
-	data/test/
+	examples/data/test/
 	
 		- 0
 		- 1
