@@ -5,15 +5,11 @@
 - Prepare Data
 
 	data/train
-	
 		- 0
-		
 		- 1
 		
 	data/test
-	
 		- 0
-		
 		- 1
 
 - Train Model
