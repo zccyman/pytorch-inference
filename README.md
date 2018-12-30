@@ -5,7 +5,7 @@
 - Prepare Data
 
 	examples/data/train/
-```	
+	
 		- 0
 		- 1
 		  .
@@ -15,7 +15,7 @@
 ```	
 
 	examples/data/test/
-```	
+
 		- 0
 		- 1
 		  .
