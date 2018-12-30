@@ -8,11 +8,19 @@
 	
 		- 0
 		- 1
+		  .
+		  .
+		  .
+		- n
 		
 	data/test/
 	
 		- 0
 		- 1
+		  .
+		  .
+		  .
+		- n
 
 - Train Model
 
