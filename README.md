@@ -53,8 +53,9 @@
 - CMake3.13
 - CUDA10.0
 - CUDNN7.3
-- OpenCV4.0.1
 - Pytorch1.0
+- Libtorch https://download.pytorch.org/libtorch/cu100/libtorch-win-shared-with-deps-latest.zip
+- OpenCV4.0.1 https://opencv.org/releases.html
 
 ### Questions
 
