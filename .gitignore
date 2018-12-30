@@ -9,3 +9,9 @@ examples/models/__pycache__
 examples/tools/__pycache__
 examples/checkpoint
 
+
+#files
+log.txt
+__pycache__
+*.vs
+
