@@ -1,6 +1,6 @@
-### Serving PyTorch Models in C++ on Windows10 platforms
+## Serving PyTorch Models in C++ on Windows10 platforms
 
-#### How to use
+### How to use
 
 - Prepare Data
 
@@ -42,7 +42,7 @@
 
 		- opencv https://opencv.org/releases.html
 
-#### Environment
+### Environment
 
 - Windows10
 - VS2017
@@ -52,12 +52,12 @@
 - OpenCV4.0.1
 - Pytorch1.0
 
-#### Questions
+### Questions
 
 - "torch.jit.trace" doesn’t support nn.DataParallel so far.
 
 	
-#### Acknowledgement
+### Acknowledgement
 
 1.https://github.com/Wizaron/pytorch-cpp-inference
 
