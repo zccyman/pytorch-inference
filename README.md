@@ -59,6 +59,6 @@
 	
 ### Acknowledgement
 
-1.https://github.com/Wizaron/pytorch-cpp-inference
+- https://github.com/Wizaron/pytorch-cpp-inference
 
-2.https://zhuanlan.zhihu.com/p/52154049
+- https://zhuanlan.zhihu.com/p/52154049
