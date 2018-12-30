@@ -243,9 +243,9 @@ def demo():
         os.makedirs("./checkpoint/")
     args.logger = setup_logger("", "./checkpoint/", 0)
 
-    data_root = "/disk2/zhangcc/facevisa/POY/poy_chaos_tail_detection/data/tail_cascade"
-    #data_root = "H:\\POY\\poylongjumptopside\\origin\\train\\longjump_cascade_assem"
-    #data_root = "./data"
+    #data_root = "/disk2/zhangcc/facevisa/POY/poy_chaos_tail_detection/data/tail_cascade"
+    #data_root = "H:/POY/poylongjumptopside/origin/train/longjump_cascade_assem"
+    data_root = "./data"
     args.resume_file = "./checkpoint/resume_training_model.pkl"
 
     args.channels = 3
