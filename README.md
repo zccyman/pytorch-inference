@@ -5,13 +5,13 @@
 - Prepare Data
 
 	examples/data/train/
-	
-		- 0
-		- 1
-		  .
-		  .
-		  .
-		- n
+```	
+	- 0
+	- 1
+	  .
+	  .
+	  .
+	- n
 ```	
 
 	examples/data/test/
