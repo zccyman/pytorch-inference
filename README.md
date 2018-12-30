@@ -23,17 +23,17 @@
 		- n
 
 - Train Model
-'''
+```
 	cd examples && python train.py
-'''	
+```
 - Transform Model
-'''
+```
 	cd examples && python transform_model.py
-'''
+```
 - Test Model
-'''
+```
 	use makefile/pytorch/pytorch.sln
-'''	
+```	
 - Thirdparty
 
 	thirdpart/
