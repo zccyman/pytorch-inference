@@ -166,10 +166,13 @@ def train(train_loader, test_loader, model, criterion, optimizer, epoch, lr_inte
             if prec1[0] >= args.best_acc:
                 args.best_acc = prec1.item()
                 args.logger.info("=> higher accuracy: {} \n\n".format(args.best_acc))
+                args.logger.info("=> epoch: {} \n\n".format(epoch))
                 save_checkpoint(model, epoch, optimizer, args.resume_file)
-                save_inference(model)
+                if not args.is_multi_gpu:
+                    save_inference(model)
             else:
                 args.logger.info("=> higher accuracy: {} \n\n".format(args.best_acc))
+                args.logger.info("=> epoch: {} \n\n".format(epoch))
     
         # measure data loading time
         data_time.update(time.time() - end)
@@ -258,8 +261,9 @@ def demo():
     momentum = 0.9
     weight_decay = 1e-4
 
-    resume = 0
+    resume = 1
     pretrained = 0
+    args.is_multi_gpu = 0
     device_ids = [0]
     args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -314,12 +318,11 @@ def demo():
             nn.Linear(128, labels),
         )
     print(model)
-   
     net_vision(model)
 
     args.logger.info("gpu_id num: {}".format(torch.cuda.device_count()))
-    #if torch.cuda.device_count() > 0:
-    #   model = nn.DataParallel(model, device_ids=device_ids)
+    if torch.cuda.device_count() > 0 and args.is_multi_gpu:
+       model = nn.DataParallel(model, device_ids=device_ids)
     model.to(args.device)
 
     criterion = nn.CrossEntropyLoss()
@@ -327,8 +330,7 @@ def demo():
 
     optimizer = torch.optim.SGD(model.parameters(), args.lr, momentum=momentum, weight_decay=weight_decay)
 
-    #resume
-    if resume:
+    if resume: #resume
         if os.path.isfile(args.resume_file):
             args.logger.info('==> Resuming from checkpoint..')
             checkpoint = torch.load(args.resume_file)
