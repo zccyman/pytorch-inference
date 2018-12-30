@@ -13,24 +13,26 @@
 	  .
 	- n
 ```	
-
 	examples/data/test/
-
-		- 0
-		- 1
-		  .
-		  .
-		  .
-		- n
 ```
+	- 0
+	- 1
+	  .
+	  .
+	  .
+	- n
+```
+
 - Train Model
 ```
 cd examples && python train.py
 ```
+
 - Transform Model
 ```
 cd examples && python transform_model.py
 ```
+
 - Test Model
 ```
 makefile/pytorch/pytorch.sln
