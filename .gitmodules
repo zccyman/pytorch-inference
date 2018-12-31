@@ -1,0 +1,84 @@
+[submodule "thirdparty/pybind11"]
+	path = thirdparty/pybind11
+	url = https://github.com/pybind/pybind11.git
+[submodule "thirdparty/cub"]
+	path = thirdparty/cub
+	url = https://github.com/NVlabs/cub.git
+[submodule "thirdparty/eigen"]
+	path = thirdparty/eigen
+	url = https://github.com/eigenteam/eigen-git-mirror.git
+[submodule "thirdparty/googletest"]
+	path = thirdparty/googletest
+	url = https://github.com/google/googletest.git
+[submodule "thirdparty/benchmark"]
+	path = thirdparty/benchmark
+	url = https://github.com/google/benchmark.git
+[submodule "thirdparty/protobuf"]
+	path = thirdparty/protobuf
+	url = https://github.com/google/protobuf.git
+[submodule "thirdparty/ios-cmake"]
+	path = thirdparty/ios-cmake
+	url = https://github.com/Yangqing/ios-cmake.git
+[submodule "thirdparty/NNPACK"]
+	path = thirdparty/NNPACK
+	url = https://github.com/Maratyszcza/NNPACK.git
+[submodule "thirdparty/gloo"]
+	path = thirdparty/gloo
+	url = https://github.com/facebookincubator/gloo
+[submodule "thirdparty/NNPACK_deps/pthreadpool"]
+	path = thirdparty/pthreadpool
+	url = https://github.com/Maratyszcza/pthreadpool.git
+[submodule "thirdparty/NNPACK_deps/FXdiv"]
+	path = thirdparty/FXdiv
+	url = https://github.com/Maratyszcza/FXdiv.git
+[submodule "thirdparty/NNPACK_deps/FP16"]
+	path = thirdparty/FP16
+	url = https://github.com/Maratyszcza/FP16.git
+[submodule "thirdparty/NNPACK_deps/psimd"]
+	path = thirdparty/psimd
+	url = https://github.com/Maratyszcza/psimd.git
+[submodule "thirdparty/zstd"]
+	path = thirdparty/zstd
+	url = https://github.com/facebook/zstd.git
+[submodule "third-party/cpuinfo"]
+	path = thirdparty/cpuinfo
+	url = https://github.com/Maratyszcza/cpuinfo.git
+[submodule "thirdparty/python-enum"]
+	path = thirdparty/python-enum
+	url = https://github.com/PeachPy/enum34.git
+[submodule "thirdparty/python-peachpy"]
+	path = thirdparty/python-peachpy
+	url = https://github.com/Maratyszcza/PeachPy.git
+[submodule "thirdparty/python-six"]
+	path = thirdparty/python-six
+	url = https://github.com/benjaminp/six.git
+[submodule "thirdparty/ComputeLibrary"]
+	path = thirdparty/ComputeLibrary
+	url = https://github.com/ARM-software/ComputeLibrary.git
+[submodule "thirdparty/onnx"]
+	path = thirdparty/onnx
+	url = https://github.com/onnx/onnx.git
+[submodule "thirdparty/onnx-tensorrt"]
+	path = thirdparty/onnx-tensorrt
+	url = https://github.com/bddppq/onnx-tensorrt
+[submodule "thirdparty/sleef"]
+	path = thirdparty/sleef
+	url = https://github.com/zdevito/sleef
+[submodule "thirdparty/ideep"]
+	path = thirdparty/ideep
+	url = https://github.com/intel/ideep
+[submodule "thirdparty/nccl/nccl"]
+	path = thirdparty/nccl/nccl
+	url = https://github.com/NVIDIA/nccl
+[submodule "thirdparty/gemmlowp/gemmlowp"]
+	path = thirdparty/gemmlowp/gemmlowp
+	url = https://github.com/google/gemmlowp.git
+[submodule "thirdparty/QNNPACK"]
+	path = thirdparty/QNNPACK
+	url = https://github.com/pytorch/QNNPACK
+[submodule "thirdparty/neon2sse"]
+	path = thirdparty/neon2sse
+	url = https://github.com/intel/ARM_NEON_2_x86_SSE.git
+[submodule "thirdparty/fbgemm"]
+	path = thirdparty/fbgemm
+	url = https://github.com/pytorch/fbgemm
