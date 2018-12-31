@@ -39,6 +39,9 @@ cd examples && python transform_model.py
 ```
 cd makefile/pytorch
 mkdir build && cd build && cmake -A x64 ..
+or
+mkdir build && cd build && cmake -G "Visual Studio 15 Win64" ..
+
 set Command Arguments -> ..\..\..\examples\checkpoint ..\..\..\examples\images
 set Environment -> path=%path%;../../../thirdparty/libtorch/lib;../../../thirdparty/opencv/build/x64/vc15/bin;
 ```	
@@ -47,6 +50,8 @@ set Environment -> path=%path%;../../../thirdparty/libtorch/lib;../../../thirdpa
 ```
 cd makefile/cuda
 mkdir build && cd build && cmake -A x64 ..
+or
+mkdir build && cd build && cmake -G "Visual Studio 14 Win64" ..
 ```	
 
 #### Thirdparty
