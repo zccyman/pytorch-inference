@@ -111,6 +111,7 @@ int predict(const std::vector<cv::Mat> &images, const std::shared_ptr<torch::jit
 	}
 
 	torch::Tensor results = model->forward(inputs).toTensor();
+	//std::cout << "results: " << results << std::endl;
 	if (DEVICE_TYPE::GPU == mode)
 	{
 		results = results.to(at::kCPU);//inference
@@ -129,12 +130,13 @@ int predict(const std::vector<cv::Mat> &images, const std::shared_ptr<torch::jit
 		//if (DEVICE_TYPE::GPU == mode)
 		if (0)
 		{
-			pytorch_gpu_softmax(unnorm_probs.data(), unnorm_probs.size());
+			pytorch_gpu_softmax(unnorm_probs);
 			probs.push_back(unnorm_probs);
 		}
 		else
 		{
-			probs.push_back(pytorch_cpu_softmax(unnorm_probs));
+			pytorch_cpu_softmax(unnorm_probs);
+			probs.push_back(unnorm_probs);
 		}
 
 	}

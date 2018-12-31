@@ -3,9 +3,8 @@
 
 #include <vector>
 
-std::vector<float> softmax(std::vector<float> unnorm_probs);
+int pytorch_cpu_softmax(std::vector<float> &probs);
 
-template <typename Dtype>
-int pytorch_gpu_softmax(Dtype *array, int size);
+int pytorch_gpu_softmax(std::vector<float> &array);
 
 #endif !_PYTORCH_SOFTMAX_HPP_

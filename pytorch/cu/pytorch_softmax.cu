@@ -62,9 +62,12 @@ __global__ void softmax_exp1(Dtype *a, int n, Dtype *b, Dtype *y) {
   }
 }
 
-int pytorch_gpu_softmax(float *array, int size){
+int pytorch_gpu_softmax(std::vector<float> &array)
+{
+	int size = array.size();
+
 	float *gpudata, *y, *b;
-	
+
 	cudaMalloc((void**)&gpudata, sizeof(float) * size);
 	cudaMalloc((void**)&y, sizeof(float) * size);
 	cudaMalloc((void**)&b, sizeof(float));
@@ -73,13 +76,13 @@ int pytorch_gpu_softmax(float *array, int size){
 	cudaMemset(y, 0, sizeof(float) * size);
 	cudaMemset(b, 0, sizeof(float));
 	
-	cudaMemcpy(gpudata, array, sizeof(float) * size, cudaMemcpyHostToDevice);
+	cudaMemcpy(gpudata, array.data(), sizeof(float) * size, cudaMemcpyHostToDevice);
 	
 	softmax_exp0 << < CAFFE_GET_BLOCKS(1), CAFFE_CUDA_NUM_THREADS >> > (gpudata, size, y);
 	softmax_sum << < CAFFE_GET_BLOCKS(1), CAFFE_CUDA_NUM_THREADS >> > (y, size, b);
 	softmax_exp1 << < CAFFE_GET_BLOCKS(1), CAFFE_CUDA_NUM_THREADS >> > (gpudata, size, b, y);
 	
-	cudaMemcpy(array, y, sizeof(float) * size, cudaMemcpyDeviceToHost);
+	cudaMemcpy(array.data(), y, sizeof(float) * size, cudaMemcpyDeviceToHost);
 	
 	cudaFree(gpudata);
 	cudaFree(y);
