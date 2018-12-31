@@ -1,5 +1,7 @@
 # Serving PyTorch Models in C++ on Windows10 platforms
 
+![Dynamic graph](https://github.com/zccyman/pytorch-inference/blob/master/examples/docs/pytorch-logo-dark.png)
+
 ## How to use
 
 - Prepare Data
