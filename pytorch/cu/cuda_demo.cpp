@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
     }
 	std::cout << std::endl;
 
-	pytorch_gpu_softmax(uniform.data(), 3);
+	pytorch_gpu_softmax(uniform);
 	
 	for (int i = 0; i < 3; i++) {
 		std::cout << uniform[i] << std::endl;
