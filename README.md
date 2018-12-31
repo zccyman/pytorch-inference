@@ -46,6 +46,7 @@ makefile/pytorch/pytorch.sln
 
 		- libtorch  
 		- opencv 
+		- CUDA
 
 ## Environment
 
