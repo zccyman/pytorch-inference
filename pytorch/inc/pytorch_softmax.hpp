@@ -1,10 +1,11 @@
-#ifndef _PYTORCH_SOFTMAX_H_
-#define _PYTORCH_SOFTMAX_H_
+#ifndef _PYTORCH_SOFTMAX_HPP_
+#define _PYTORCH_SOFTMAX_HPP_
 
 #include <vector>
 
-std::vector<float> pytorch_cpu_softmax(std::vector<float> unnorm_probs);
+std::vector<float> softmax(std::vector<float> unnorm_probs);
 
-int pytorch_gpu_softmax(float *array, int size);
+template <typename Dtype>
+int pytorch_gpu_softmax(Dtype *array, int size);
 
-#endif !_PYTORCH_SOFTMAX_H_
+#endif !_PYTORCH_SOFTMAX_HPP_
