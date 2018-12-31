@@ -86,6 +86,12 @@ mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 
 ## Todo
 
+- build classification network
+
+- compress pytorch model
+
+- object detection pytorch inference using C++ on Window platforms
+
 
 ## Questions
 
