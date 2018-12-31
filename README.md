@@ -39,6 +39,8 @@ cd examples && python transform_model.py
 ```
 cd makefile/pytorch
 mkdir build && cd build && cmake -A x64 ..
+set Command Arguments -> ..\..\..\examples\checkpoint ..\..\..\examples\images
+set Environment -> path=%path%;../../../thirdparty/libtorch/lib;../../../thirdparty/opencv/build/x64/vc15/bin;
 ```	
 
 #### Test CUDA Softmax
