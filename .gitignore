@@ -1,3 +1,4 @@
+makefile/cuda/*
 makefile/*.vs
 makefile/python.dir
 makefile/Release
