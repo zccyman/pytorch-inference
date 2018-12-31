@@ -125,10 +125,18 @@ int predict(const std::vector<cv::Mat> &images, const std::shared_ptr<torch::jit
 	{
 		std::vector<float> unnorm_probs(results.data<float>() + (nidx * n_classes),
 			results.data<float>() + ((nidx + 1) * n_classes));
-		//probs.push_back(softmax(unnorm_probs));
 
-		pytorch_gpu_softmax(unnorm_probs.data(), unnorm_probs.size());
-		probs.push_back(unnorm_probs);
+		//if (DEVICE_TYPE::GPU == mode)
+		if (0)
+		{
+			pytorch_gpu_softmax(unnorm_probs.data(), unnorm_probs.size());
+			probs.push_back(unnorm_probs);
+		}
+		else
+		{
+			probs.push_back(pytorch_cpu_softmax(unnorm_probs));
+		}
+
 	}
 
 	return 0;

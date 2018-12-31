@@ -8,8 +8,13 @@
 
 int main(int argc, char **argv)
 {
-	std::string model_path = string(argv[1]);
-	std::string image_path = string(argv[2]);
+	if (3 != argc)
+	{
+		std::cout << "command arguments is wrong!" << std::endl;
+		return -1;
+	}
+	std::string model_path = string(argv[1]) + "/inference.pth";
+	std::string image_path = string(argv[2]) + "/image.jpg";
 	
 	int total_images = 1024;
 	int batch_size = 32;

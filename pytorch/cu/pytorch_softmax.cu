@@ -26,8 +26,8 @@ inline int CAFFE_GET_BLOCKS(const int N) { \
   return (N + CAFFE_CUDA_NUM_THREADS - 1) / CAFFE_CUDA_NUM_THREADS;
 }
   
-//template <typename Dtype>
-__global__ void softmax_exp0(float *a, int n, float *y) 
+template <typename Dtype>
+__global__ void softmax_exp0(Dtype *a, int n, Dtype *y) 
 {
   CUDA_KERNEL_LOOP(i, n) {
     y[i] = exp(a[i]);
@@ -35,14 +35,15 @@ __global__ void softmax_exp0(float *a, int n, float *y)
 }
 
 const int blockSize = 1024;
-__global__ void softmax_sum(const float *gArr, int arraySize, float *gOut) {
+template <typename Dtype>
+__global__ void softmax_sum(const Dtype *gArr, int arraySize, Dtype *gOut) {
     int thIdx = threadIdx.x;
     int gthIdx = thIdx + blockIdx.x*blockSize;
     const int gridSize = blockSize*gridDim.x;
-    float sum = 0;
+    Dtype sum = 0;
     for (int i = gthIdx; i < arraySize; i += gridSize)
         sum += gArr[i];
-    __shared__ float shArr[blockSize];
+    __shared__ Dtype shArr[blockSize];
     shArr[thIdx] = sum;
     __syncthreads();
     for (int size = blockSize/2; size>0; size/=2) { //uniform
@@ -61,7 +62,7 @@ __global__ void softmax_exp1(Dtype *a, int n, Dtype *b, Dtype *y) {
   }
 }
 
-void pytorch_gpu_softmax(float *array, int size){
+int pytorch_gpu_softmax(float *array, int size){
 	float *gpudata, *y, *b;
 	
 	cudaMalloc((void**)&gpudata, sizeof(float) * size);
@@ -84,4 +85,5 @@ void pytorch_gpu_softmax(float *array, int size){
 	cudaFree(y);
 	cudaFree(b);
 	
+	return 0;
 }

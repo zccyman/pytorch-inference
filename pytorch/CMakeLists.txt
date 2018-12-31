@@ -1,10 +1,26 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project(pytorch)
 
+set(Torch_DIR "../thirdparty/libtorch/share/cmake/Torch/")
+set(Caffe2_DIR "../thirdparty/libtorch/share/cmake/Caffe2/")
+set(OpenCV_DIR "../thirdparty/opencv/build/")
+
+set(CMAKE_BUILD_TYPE "Release")
+
 find_package(Torch REQUIRED)
 find_package(OpenCV REQUIRED)
 
-add_executable(pytorch demo/main.cpp src/pytorch_interface.cpp)
+include_directories(../thirdparty/CUDA/common/inc)
+include_directories(../pytorch/inc)
+
+cuda_add_executable (pytorch
+	demo/main.cpp
+	inc/pytorch_softmax.hpp
+	src/pytorch_interface.cpp
+	src/pytorch_softmax.cpp
+	cu/pytorch_softmax.cu
+)
+#add_executable(pytorch demo/main.cpp src/pytorch_interface.cpp)
 
 target_link_libraries(pytorch "${TORCH_LIBRARIES}")
 target_link_libraries(pytorch "${OpenCV_LIBS}")

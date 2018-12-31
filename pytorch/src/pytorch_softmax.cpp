@@ -1,7 +1,7 @@
 #include "pytorch_softmax.hpp"
 
 // Softmax
-std::vector<float> softmax(std::vector<float> unnorm_probs) 
+std::vector<float> pytorch_cpu_softmax(std::vector<float> unnorm_probs)
 {
   int n_classes = unnorm_probs.size();
 
