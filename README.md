@@ -37,7 +37,14 @@ cd examples && python transform_model.py
 
 #### Test Model
 ```
-makefile/pytorch/pytorch.sln
+cd makefile/pytorch
+mkdir build && cd build && cmake -A x64 ..
+```	
+
+#### Test CUDA Softmax
+```
+cd makefile/cuda
+mkdir build && cd build && cmake -A x64 ..
 ```	
 
 #### Thirdparty
