@@ -87,3 +87,7 @@ mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 - https://github.com/Wizaron/pytorch-cpp-inference
 
 - https://zhuanlan.zhihu.com/p/52154049
+
+- [Caffe](https://github.com/BVLC/caffe)
+
+- [Pytorch](https://github.com/pytorch/pytorch)
