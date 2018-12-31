@@ -128,7 +128,7 @@ int predict(const std::vector<cv::Mat> &images, const std::shared_ptr<torch::jit
 			results.data<float>() + ((nidx + 1) * n_classes));
 
 		//if (DEVICE_TYPE::GPU == mode)
-		if (0)
+		if (1)
 		{
 			pytorch_gpu_softmax(unnorm_probs);
 			probs.push_back(unnorm_probs);

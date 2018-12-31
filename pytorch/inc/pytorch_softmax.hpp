@@ -5,6 +5,6 @@
 
 int pytorch_cpu_softmax(std::vector<float> &probs);
 
-int pytorch_gpu_softmax(std::vector<float> &array);
+int pytorch_gpu_softmax(std::vector<float> &probs);
 
 #endif !_PYTORCH_SOFTMAX_HPP_
