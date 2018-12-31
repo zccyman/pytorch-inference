@@ -42,7 +42,7 @@ mkdir build && cd build && cmake -A x64 ..
 
 or
 
-mkdir build && cd build && cmake -G "Visual Studio 15 Win64" ..
+mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 
 set Command Arguments -> ..\..\..\examples\checkpoint ..\..\..\examples\images
 set Environment -> path=%path%;../../../thirdparty/libtorch/lib;../../../thirdparty/opencv/build/x64/vc15/bin;
@@ -55,7 +55,7 @@ mkdir build && cd build && cmake -A x64 ..
 
 or
 
-mkdir build && cd build && cmake -G "Visual Studio 14 Win64" ..
+mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 ```	
 
 #### Thirdparty
