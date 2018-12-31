@@ -22,10 +22,6 @@ int main(int argc, char **argv)
 	std::shared_ptr<torch::jit::script::Module> model;
 	read_model(model_path, devices_id, mode, model);
 
-	//
-
-	//
-
 	cv::Mat image = cv::imread(image_path, 1);
 	if (!image.empty())
 	{

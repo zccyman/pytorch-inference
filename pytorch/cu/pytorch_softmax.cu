@@ -1,4 +1,4 @@
-//#include "pytorch_softmax.hpp"
+#include "pytorch_softmax.hpp"
 
 // System includes
 #include <stdio.h>
@@ -65,7 +65,7 @@ void pytorch_gpu_softmax(float *array, int size){
 	float *gpudata, *y, *b;
 	
 	cudaMalloc((void**)&gpudata, sizeof(float) * size);
-    cudaMalloc((void**)&y, sizeof(float) * size);
+	cudaMalloc((void**)&y, sizeof(float) * size);
 	cudaMalloc((void**)&b, sizeof(float));
 	
 	cudaMemset(gpudata, 0, sizeof(float) * size);
@@ -81,25 +81,7 @@ void pytorch_gpu_softmax(float *array, int size){
 	cudaMemcpy(array, y, sizeof(float) * size, cudaMemcpyDeviceToHost);
 	
 	cudaFree(gpudata);
-    cudaFree(y);
+	cudaFree(y);
 	cudaFree(b);
 	
-}
-
-int main(int argc, char **argv) 
-{
-	std::vector<float> uniform;
-    for (int i = 0; i < 3; i++) {
-        uniform.push_back(float(i + 0.1f));
-		std::cout << uniform[i] << std::endl;
-    }
-	std::cout << std::endl;
-
-	pytorch_gpu_softmax(uniform.data(), 3);
-	
-	for (int i = 0; i < 3; i++) {
-		std::cout << uniform[i] << std::endl;
-	}
-
-	return 0;
 }

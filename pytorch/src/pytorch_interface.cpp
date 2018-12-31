@@ -1,4 +1,6 @@
 #include "pytorch_interface.h"
+#include "pytorch_softmax.hpp"
+
 //preprocess
 static int normalize(cv::Mat &image, const std::vector<float> &mean, const std::vector<float> &std)
 {
@@ -40,29 +42,6 @@ static int preprocess(cv::Mat &image, int new_height, int new_width, \
 
 	return 0;
 }//preprocess
-
-// Softmax
-static std::vector<float> softmax(std::vector<float> unnorm_probs) 
-{
-  int n_classes = unnorm_probs.size();
-
-  // 1. Partition function
-  float log_sum_of_exp_unnorm_probs = 0.0f;
-  for (auto& n : unnorm_probs) 
-  {
-    log_sum_of_exp_unnorm_probs += std::exp(n);
-  }
-  log_sum_of_exp_unnorm_probs = std::log(log_sum_of_exp_unnorm_probs);
-
-  // 2. normalize
-  std::vector<float> probs(n_classes);
-  for (int class_idx = 0; class_idx != n_classes; class_idx++) 
-  {
-    probs[class_idx] = std::exp(unnorm_probs[class_idx] - log_sum_of_exp_unnorm_probs);
-  }
-
-  return probs;
-}
 
 int read_model(const std::string &model_file, const std::vector<int> &devices_id, int mode, std::shared_ptr<torch::jit::script::Module> &model)
 {
@@ -146,17 +125,10 @@ int predict(const std::vector<cv::Mat> &images, const std::shared_ptr<torch::jit
 	{
 		std::vector<float> unnorm_probs(results.data<float>() + (nidx * n_classes),
 			results.data<float>() + ((nidx + 1) * n_classes));
+		//probs.push_back(softmax(unnorm_probs));
 
-		probs.push_back(softmax(unnorm_probs));
-
-		//vector->tensor
-		torch::TensorOptions options_(torch::kFloat32);
-		torch::Tensor prob_tensor = torch::from_blob(unnorm_probs.data(), \
-			at::IntList(unnorm_probs.size()), options_);
-
-		//torch::Tensor output;
-		//SoftMax_updateOutput(prob_tensor, output);
-		//std::cout << "prob_tensor: " << prob_tensor << std::endl;
+		pytorch_gpu_softmax(unnorm_probs.data(), unnorm_probs.size());
+		probs.push_back(unnorm_probs);
 	}
 
 	return 0;

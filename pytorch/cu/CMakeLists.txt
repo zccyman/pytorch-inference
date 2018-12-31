@@ -5,8 +5,10 @@ STRING (TOLOWER ${CMAKE_SYSTEM_NAME} LOWER_SYSTEM_NAME)
 SET(CUDA_TARGET_INCLUDE  ${CUDA_TOOLKIT_ROOT_DIR}-${CUDA_VERSION}/targets/${CMAKE_HOST_SYSTEM_PROCESSOR}-${LOWER_SYSTEM_NAME}/include)
 
 include_directories(../../thirdparty/CUDA/common/inc)
+include_directories(../../pytorch/include)
 
 cuda_add_executable (cuda_demo
+	cuda_demo.cpp
 	pytorch_softmax.cu
 )
 
