@@ -77,6 +77,12 @@ mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 - [Libtorch](https://download.pytorch.org/libtorch/cu100/libtorch-win-shared-with-deps-latest.zip)
 - [OpenCV4.0.1](https://opencv.org/releases.html)
 
+## Done
+
+
+## Todo
+
+
 ## Questions
 
 - "torch.jit.trace" doesn’t support nn.DataParallel so far.
