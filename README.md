@@ -4,7 +4,7 @@
 
 ## How to use
 
-- Prepare Data
+### Prepare Data
 
 	examples/data/train/
 
@@ -25,21 +25,21 @@
 		- n
 
 
-- Train Model
+### Train Model
 ```
 cd examples && python train.py
 ```
 
-- Transform Model
+### Transform Model
 ```
 cd examples && python transform_model.py
 ```
 
-- Test Model
+### Test Model
 ```
 makefile/pytorch/pytorch.sln
 ```	
-- Thirdparty
+### Thirdparty
 
 	thirdpart/
 
