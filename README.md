@@ -80,9 +80,11 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 
 ## Done
 
-- train, transform and test pytorch model
+- Support train and transform pytorch model 
 
-- add cuda softmax module
+- Support multi-batch inference pytorch model in C++
+
+- Support cup and gpu softmax
 
 
 ## Todo
