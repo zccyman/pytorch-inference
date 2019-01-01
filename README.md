@@ -60,11 +60,11 @@ mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 
 #### Thirdparty
 
-[here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#list/path=%2Fgithub%2Fpytorch-inference/thirdparty.zip)
 	thirdpart/
 		- libtorch  
 		- opencv 
 		- CUDA
+[here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#list/path=%2Fgithub%2Fpytorch-inference/thirdparty.zip)
 
 ## Environment
 
