@@ -76,6 +76,7 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 - CUDNN7.3
 - Pyton3.5
 - ONNX1.1.2
+- TensorRT5.0.1
 - Pytorch1.0
 - [Libtorch](https://download.pytorch.org/libtorch/cu100/libtorch-win-shared-with-deps-latest.zip)
 - [OpenCV4.0.1](https://opencv.org/releases.html)
