@@ -80,13 +80,13 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 
 ## Done
 
-- Support train and transform pytorch model. 
+- Support train and transform pytorch model
 
-- Support multi-batch inference pytorch model in C++.
+- Support multi-batch inference pytorch model in C++
 
-- Support cpu and gpu softmax.
+- Support cpu and gpu softmax
 
-- Support transform pytorch model to ONNX model, and inference onnx model using tensorRT.
+- Support transform pytorch model to ONNX model, and inference onnx model using tensorRT
 
 
 
