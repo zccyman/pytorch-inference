@@ -74,6 +74,8 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 - CMake3.13
 - CUDA10.0
 - CUDNN7.3
+- Pyton3.5
+- ONNX1.1.2
 - Pytorch1.0
 - [Libtorch](https://download.pytorch.org/libtorch/cu100/libtorch-win-shared-with-deps-latest.zip)
 - [OpenCV4.0.1](https://opencv.org/releases.html)
