@@ -106,7 +106,7 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 
 - "torch.jit.trace" doesn’t support nn.DataParallel so far.
 
-- TensorRT doesn’t supports opset 7 above so far, but pyTorch ONNX exporter can export opset 9.
+- TensorRT doesn’t supports opset 7 above so far, but pyTorch ONNX exporter seems to export opset 9.
 
 	
 ## Acknowledgement
