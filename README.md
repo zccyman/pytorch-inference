@@ -79,6 +79,7 @@ or
 mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 set Environment -> path=%path%;../../../../thirdparty/TensorRT/lib;
 ```
+download [VGG16_faster_rcnn_final.caffemodel](https://github.com/Sephora-M/master-thesis/tree/master/py-faster-rcnn/data/faster_rcnn_models)
 
 #### Thirdparty
 
