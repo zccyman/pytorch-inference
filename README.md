@@ -126,7 +126,7 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 - object detection pytorch inference using C++ on Window platforms
 
 
-## Questions
+## Notes
 
 - "torch.jit.trace" doesn’t support nn.DataParallel so far.
 
