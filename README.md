@@ -66,7 +66,18 @@ mkdir build && cd build && cmake -A x64 ..
 or
 
 mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
-set Environment -> path=%path%;../../../thirdparty/TensorRT/lib;
+set Environment -> path=%path%;../../../../thirdparty/TensorRT/lib;
+```
+
+#### Inference caffe model for faster-rcnn
+```
+cd makefile/tensorRT/detection
+mkdir build && cd build && cmake -A x64 ..
+
+or
+
+mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
+set Environment -> path=%path%;../../../../thirdparty/TensorRT/lib;
 ```
 
 #### Thirdparty
