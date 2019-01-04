@@ -115,7 +115,7 @@ download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#
 
 - Support transform pytorch model to ONNX model, and inference onnx model using tensorRT
 
-
+- Support inference caffe model for faster-rcnn using tensorRT
 
 ## Todo
 
