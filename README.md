@@ -75,6 +75,7 @@ set Environment -> path=%path%;../../../thirdparty/TensorRT/lib;
 		- libtorch  
 		- opencv 
 		- CUDA
+		- TensorRT
 		
 download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#list/path=%2Fgithub%2Fpytorch-inference/thirdparty.zip).
 
