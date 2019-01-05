@@ -91,6 +91,13 @@ download [VGG16_faster_rcnn_final.caffemodel](https://github.com/Sephora-M/maste
 		
 download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#list/path=%2Fgithub%2Fpytorch-inference/thirdparty.zip).
 
+## Docker
+```
+docker pull zccyman/deepframe
+nvidia-docker run -it --name=mydocker zccyman/deepframe /bin/bash
+cd workspace && git clone https://github.com/zccyman/pytorch-inference.git
+```
+
 ## Environment
 
 - Windows10
