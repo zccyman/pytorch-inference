@@ -14,6 +14,9 @@ import torch.nn as nn
 import torchvision.models as models
 import visdom
 
+from torch.utils.data.sampler import  WeightedRandomSampler
+from torch.utils.data import DataLoader
+
 from torch.autograd import Variable
 from torchviz import make_dot, make_dot_from_trace
 from graphviz import Digraph
@@ -303,8 +306,15 @@ def demo():
         args.logger.info("=> test input_size: {} {} {}".format(input.size(0),input.size(1),input.size(2)))
         break
     
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True)
+    weights = [1, 1]
+    sampler = WeightedRandomSampler(weights,\
+                                num_samples=10000,\
+                                replacement=True)
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=False, sampler=sampler)
     test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=20, shuffle=False)
+
+    #for datas, labels_ in train_loader:
+    #    print(labels_.tolist())
 
     args.logger.info("=> using resnet18 network...")
     #model = models.resnet18(pretrained=pretrained)
