@@ -306,7 +306,7 @@ def demo():
         args.logger.info("=> test input_size: {} {} {}".format(input.size(0),input.size(1),input.size(2)))
         break
     
-    weights = [1, 1]
+    weights = np.ones(labels) #[1, 1]
     sampler = WeightedRandomSampler(weights,\
                                 num_samples=10000,\
                                 replacement=True)
