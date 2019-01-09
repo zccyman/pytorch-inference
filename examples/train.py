@@ -166,7 +166,7 @@ def train(train_loader, test_loader, model, criterion, optimizer, epoch, lr_inte
             prec1 = validate(test_loader, model, criterion)
 
             args.logger.info("=> test accuracy: {}".format(prec1.item()))
-            if prec1[0] >= args.best_acc:
+            if prec1.item() >= args.best_acc:
                 args.best_acc = prec1.item()
                 args.logger.info("=> higher accuracy: {} \n\n".format(args.best_acc))
                 args.logger.info("=> epoch: {} \n\n".format(epoch))
@@ -290,7 +290,7 @@ def demo():
         ]))
 
     test_dataset = datasets.ImageFolder(
-        test_dir,
+        train_dir, #test_dir
         transforms.Compose([
             transforms.Resize((args.height, args.width)),
             transforms.ToTensor(),
@@ -308,10 +308,11 @@ def demo():
     
     weights = np.ones(labels) #[1, 1]
     sampler = WeightedRandomSampler(weights,\
-                                num_samples=10000,\
+                                num_samples=500,\
                                 replacement=True)
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=False, sampler=sampler)
-    test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=20, shuffle=False)
+    #train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=False, sampler=sampler)
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True)
+    test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=24, shuffle=False)
 
     #for datas, labels_ in train_loader:
     #    print(labels_.tolist())
