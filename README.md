@@ -89,7 +89,7 @@ download [VGG16_faster_rcnn_final.caffemodel](https://github.com/Sephora-M/maste
 		- CUDA
 		- TensorRT
 		
-download thirdparty from [here](https://pan.baidu.com/s/1r010qo44nF7BAWB04pGEtg#list/path=%2Fgithub%2Fpytorch-inference/thirdparty.zip).
+download thirdparty from [here](https://pan.baidu.com/s/1NxACM1coAXthmXizXKyhow#list/path=%2Fgithub%2Fpublic%2Fpytorch-inference&parentPath=%2Fgithub/thirdparty.zip).
 
 ## Docker
 ```
