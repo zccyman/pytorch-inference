@@ -79,7 +79,7 @@ or
 mkdir build && cd build && cmake -G "Visual Studio 15 2017 Win64" ..
 set Environment -> path=%path%;../../../../thirdparty/TensorRT/lib;
 ```
-download [VGG16_faster_rcnn_final.caffemodel](https://github.com/Sephora-M/master-thesis/tree/master/py-faster-rcnn/data/faster_rcnn_models)
+download [VGG16_faster_rcnn_final.caffemodel](https://pan.baidu.com/s/1NxACM1coAXthmXizXKyhow?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=#list/path=%2Fgithub%2Fpublic%2Fpytorch-inference&parentPath=%2Fgithub/VGG16_faster_rcnn_final.caffemodel)
 
 #### Thirdparty
 
