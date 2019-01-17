@@ -125,11 +125,11 @@ cd workspace && git clone https://github.com/zccyman/pytorch-inference.git
 
 - [x] inference caffe model for faster-rcnn using tensorRT
 
-- [] build classification network
+- [ ] build classification network
 
-- [] compress pytorch model
+- [ ] compress pytorch model
 
-- [] object detection pytorch inference using C++ on Window platforms
+- [ ] object detection pytorch inference using C++ on Window platforms
 
 
 ## Notes
