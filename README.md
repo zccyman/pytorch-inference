@@ -112,25 +112,24 @@ cd workspace && git clone https://github.com/zccyman/pytorch-inference.git
 - [Libtorch](https://download.pytorch.org/libtorch/cu100/libtorch-win-shared-with-deps-latest.zip)
 - [OpenCV4.0.1](https://opencv.org/releases.html)
 
-## Done
 
-- Support train and transform pytorch model
+## Todo List
 
-- Support multi-batch inference pytorch model in C++
+- [x] train and transform pytorch model
 
-- Support cpu and gpu softmax
+- [x] multi-batch inference pytorch model in C++
 
-- Support transform pytorch model to ONNX model, and inference onnx model using tensorRT
+- [x] cpu and gpu softmax
 
-- Support inference caffe model for faster-rcnn using tensorRT
+- [x] transform pytorch model to ONNX model, and inference onnx model using tensorRT
 
-## Todo
+- [x] inference caffe model for faster-rcnn using tensorRT
 
-- build classification network
+- [] build classification network
 
-- compress pytorch model
+- [] compress pytorch model
 
-- object detection pytorch inference using C++ on Window platforms
+- [] object detection pytorch inference using C++ on Window platforms
 
 
 ## Notes
